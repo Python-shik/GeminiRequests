@@ -26,10 +26,15 @@ class Gen:
             history (list, optional): Список словарей с историей диалога. Defaults to [].
             system_instructions (list, optional): Список словарей с инструкциями системы. Defaults to None.
 """
-        if "gemini_api_key" not in os.listdir("GeminiRequests"):
-            with open("GeminiRequests/gemini_api_key", "w", encoding="utf-8") as f:
+
+        if "GRdata" not in os.listdir():
+            os.mkdir("GRdata")
+
+        if "gemini_api_key" not in os.listdir("GRdata"):
+            with open("GRdata/gemini_api_key", "w", encoding="utf-8") as f:
                 f.write(input("Enter your API key from GeminiAI: "))
-        self.API_KEY = open("GeminiRequests/gemini_api_key", "r", encoding="utf-8").read()
+
+        self.API_KEY = open("GRdata/gemini_api_key", "r", encoding="utf-8").read()
         self.history = history
         self.system_instructions = system_instructions
 
