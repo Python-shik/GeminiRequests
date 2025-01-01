@@ -65,7 +65,7 @@ ai = Gen()
 
 # Add some messages to the dialogue history
 ai.history_add(role="user", content="Hello, Gemini! Tell me a joke.")
-ai.history_add(role="system", content="For context generation.")
+ai.history_add(role="model", content="For context generation.")
 
 # Ensure the last message in the history is from the user
 ai.history_add(role="user", content="What else can you do?")
